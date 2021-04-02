@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap");
+body {
+  background-color: #02020B;
+  color: #ECE4B7;
+  font-family: 'Recursive', sans-serif;
+}
+
+.all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #7FB069;
+  padding-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: #D36135;
+}
+
+.form label, a {
+  margin: 20px;
+}
+
+.form label {
+  font-size: 1.5rem;
+}
+
+.form input {
+  width: 100px;
+  height: 35px;
+}
+
+.form a {
+  background-color: #ECE4B7;
+  padding: 5px 20px;
+}
+/*# sourceMappingURL=style.css.map */
