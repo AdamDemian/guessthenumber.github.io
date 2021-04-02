@@ -1,43 +1,54 @@
 const upperLimit = 100;
 const lowerLimit = 0;
-const answer = [Math.floor(Math.random() * 100)];
+const answer = Math.floor(Math.random() * 100);
 
-let submit = document.querySelector('.submitGuess')
+const submit = document.querySelector('.submitGuess');
+const reset = document.querySelector('.reset');
 
-let errorMessage = document.querySelector('.errorMessage');
-let finalGuess = document.querySelector('.finalNumber');
-
-
+let message = document.querySelector('.errorMessage');
+// Reload function.
+function reload() {
+    window.location.reload();
+}
+// Function to make reload button works.
+reset.addEventListener('click', function () {
+    reload();
+    message.textContent = `Your number was changed`;
+})
+// Function to make submit button works.
 submit.addEventListener('click', function () {
+    // This gets the value of the input.
     let input = document.getElementById('guessNumber').value;
 
     if (parseInt(input)) {
         // Make sure the guess is converted into a number.
         input = +input;
-
+        // If input is equal to answer you win the game.
         if (input == answer) {
-            finalGuess.textContent = `You guessed right, the number was ${answer}`;
+            message.textContent = `You guessed right, the number was ${answer}`;
+            break;
         }
 
         // If the guess is less than the range let the user know.
         else if (input < lowerLimit) {
-            errorMessage.textContent = `Your guess should be greater than ` + lowerLimit + `.`;
+            message.textContent = `Your guess should be greater than ` + lowerLimit + `.`;
         }
         // If the guess is greater than the range let the user know.
         else if (input > upperLimit) {
-            errorMessage.textContent = `Your guess should be no greater than ` + upperLimit + `.`;
+            message.textContent = `Your guess should be no greater than ` + upperLimit + `.`;
         }
         // If the guess is too high let the user know.
         else if (input > answer) {
-            errorMessage.textContent = `Your guess is too high.`;
+            message.textContent = `Your guess is too high.`;
         }
         // If the guess is too low let the user know.
         else if (input < answer) {
-            errorMessage.textContent = `Your guess is too low`;
+            message.textContent = `Your guess is too low`;
         }
     }
+    // If input isn't a number let the user know.
     else {
-        errorMessage.textContent = `Your guess must be a number`
+        message.textContent = `Your guess must be a number`
     }
 });
 
