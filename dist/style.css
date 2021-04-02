@@ -23,6 +23,7 @@ h1 {
 a {
   text-decoration: none;
   color: #D36135;
+  cursor: pointer;
 }
 
 .form label, a {
