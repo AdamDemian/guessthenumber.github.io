@@ -47,7 +47,7 @@ submit.addEventListener('click', function () {
     }
     // If input isn't a number let the user know.
     else {
-        message.textContent = `Your guess must be a number`
+        message.textContent = 'Your guess must be a number';
     }
 });
 
