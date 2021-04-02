@@ -26,7 +26,6 @@ submit.addEventListener('click', function () {
         // If input is equal to answer you win the game.
         if (input == answer) {
             message.textContent = `You guessed right, the number was ${answer}`;
-            break;
         }
 
         // If the guess is less than the range let the user know.
